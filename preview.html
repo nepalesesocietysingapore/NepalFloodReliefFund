@@ -93,8 +93,6 @@
   }
   @media (prefers-reduced-motion:reduce){ .total{animation:none;} }
   @keyframes rise{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
-  .live-link{ display:inline-block; margin-top:16px; padding:9px 20px; border-radius:999px; background:var(--crimson); color:#fff; text-decoration:none; font-size:.82rem; font-weight:600; letter-spacing:.02em; }
-  .live-link:hover{ background:var(--crimson-dark); }
 
   .table-card{
     background:var(--card);
@@ -156,14 +154,13 @@
   <div class="wrap">
     <div class="total-card">
       <div class="total-label">Total Donation Collected</div>
-      <div class="total">$5,140.00</div>
-      <a class="live-link" href="https://script.google.com/macros/s/AKfycbwS4aynDq8Xg9s8kqyN2Xkk9ymwykmip6dYM3HJzv0rRsn8wqwiZhH9MRPuAE69WMJi/exec" target="_blank" rel="noopener">View Live Tracker →</a>
+      <div class="total" id="total-amount">$5,140.00</div>
     </div>
 
     <div class="table-card">
       <table>
         <thead><tr><th class="sn">SN</th><th>Name</th><th class="amt">Amount</th></tr></thead>
-        <tbody>
+        <tbody id="donation-rows">
           <tr><td class="sn">1</td><td>Amrit KC</td><td class="amt">$100.00</td></tr>
           <tr><td class="sn">2</td><td>Anita Kharel</td><td class="amt">$100.00</td></tr>
           <tr><td class="sn">3</td><td>Anjeeb Lama</td><td class="amt">$100.00</td></tr>
@@ -209,7 +206,7 @@
     </div>
 
     <div class="footer">
-      <strong>Last updated:</strong> 30 Aug 2026, 3:40 PM SGT<br>
+      <strong>Last updated:</strong> <span id="last-updated">30 Aug 2026, 3:40 PM SGT</span><br>
       If you just donated and don't see your name yet, please check back shortly — this list updates as funds are confirmed in the bank.
     </div>
   </div>
@@ -217,6 +214,27 @@
   <svg class="flags" viewBox="0 0 400 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="400" height="24" fill="url(#flags)"/>
   </svg>
+
+  <script>
+  (function () {
+    var API_URL = 'https://script.google.com/macros/s/AKfycbwS4aynDq8Xg9s8kqyN2Xkk9ymwykmip6dYM3HJzv0rRsn8wqwiZhH9MRPuAE69WMJi/exec';
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+    fetch(API_URL)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        document.getElementById('total-amount').textContent = '$' + Number(data.total).toFixed(2);
+        document.getElementById('last-updated').textContent = data.updatedAt;
+        document.getElementById('donation-rows').innerHTML = data.rows.map(function (r, i) {
+          return '<tr><td class="sn">' + (i + 1) + '</td><td>' + esc(r.name) + '</td><td class="amt">$' + Number(r.amount).toFixed(2) + '</td></tr>';
+        }).join('');
+      })
+      .catch(function (err) {
+        console.error('Live refresh failed — showing the sample data below.', err);
+      });
+  })();
+  </script>
 
 </body>
 </html>
