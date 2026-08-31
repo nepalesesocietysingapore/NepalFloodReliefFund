@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepal Flood Relief — Donation Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson:#7A1B2E;
+    --crimson-dark:#5C0F20;
+    --indigo:#47101C;
+    --indigo-deep:#2E0812;
+    --gold:#D9A441;
+    --cream:#F6EEE1;
+    --card:#FFFBF3;
+    --ink:#3A2A28;
+    --ink-soft:#8f7f76;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .flags{width:100%; height:22px; display:block;}
+  .banner{
+    position:relative;
+    overflow:hidden;
+    background:linear-gradient(180deg, var(--crimson-dark) 0%, var(--indigo) 65%, var(--indigo-deep) 100%);
+    padding:44px 24px 90px;
+    text-align:center;
+  }
+  .banner .mountains{position:absolute; left:0; right:0; bottom:0; width:100%; height:110px; display:block;}
+  .banner-inner{position:relative; z-index:2;}
+  .logo-badge{
+    width:64px; height:64px; margin:0 auto 14px; border-radius:50%;
+    background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.35);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif; font-weight:600; color:#fff; font-size:1.4rem;
+  }
+  .eyebrow{
+    margin:0 0 6px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--gold);
+    font-weight:600;
+  }
+  h1{
+    margin:0;
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(1.6rem, 4.5vw, 2.3rem);
+    color:#fff;
+    line-height:1.15;
+  }
+  .subhead{
+    margin:10px 0 0;
+    color:rgba(255,255,255,.75);
+    font-size:.95rem;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 20px 40px;}
+  .total-card{
+    background:var(--card);
+    border-radius:16px;
+    margin-top:-56px;
+    position:relative;
+    z-index:3;
+    padding:28px 24px 24px;
+    text-align:center;
+    box-shadow:0 14px 34px rgba(22,34,61,.18);
+    border-top:3px solid var(--gold);
+  }
+  .total-label{
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:.72rem;
+    color:var(--ink-soft);
+    font-weight:600;
+  }
+  .total{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:clamp(2.4rem, 8vw, 3.4rem);
+    color:var(--crimson);
+    margin:6px 0 0;
+    animation:rise .6s ease-out;
+  }
+  @media (prefers-reduced-motion:reduce){ .total{animation:none;} }
+  @keyframes rise{ from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);} }
+  .live-link{ display:inline-block; margin-top:16px; padding:9px 20px; border-radius:999px; background:var(--crimson); color:#fff; text-decoration:none; font-size:.82rem; font-weight:600; letter-spacing:.02em; }
+  .live-link:hover{ background:var(--crimson-dark); }
+
+  .table-card{
+    background:var(--card);
+    border-radius:16px;
+    margin-top:20px;
+    overflow:hidden;
+    box-shadow:0 6px 20px rgba(22,34,61,.08);
+  }
+  table{width:100%; border-collapse:collapse;}
+  thead th{
+    background:var(--indigo);
+    color:#fff;
+    text-align:left;
+    padding:12px 14px;
+    font-size:.75rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    font-weight:600;
+  }
+  th.sn, td.sn{width:44px; text-align:center; color:var(--ink-soft); font-weight:400;}
+  th.amt, td.amt{text-align:right; font-variant-numeric:tabular-nums;}
+  tbody td{padding:10px 14px; border-bottom:1px solid #ece6d8; font-size:.94rem;}
+  tbody tr:nth-child(even){background:#faf7ef;}
+  tbody tr:last-child td{border-bottom:none;}
+  td.amt{font-weight:600; color:var(--crimson-dark);}
+
+  .footer{text-align:center; margin-top:26px; color:var(--ink-soft); font-size:.82rem; line-height:1.6; padding-bottom:6px;}
+  .footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+
+  <svg class="flags" viewBox="0 0 400 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="flags" width="40" height="24" patternUnits="userSpaceOnUse">
+        <polygon points="0,0 8,0 4,16" fill="#2C5FA8"/>
+        <polygon points="8,0 16,0 12,16" fill="#F7F4EC"/>
+        <polygon points="16,0 24,0 20,16" fill="#A8193C"/>
+        <polygon points="24,0 32,0 28,16" fill="#2F7D4F"/>
+        <polygon points="32,0 40,0 36,16" fill="#E3A83B"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="24" fill="url(#flags)"/>
+  </svg>
+
+  <header class="banner">
+    <svg class="mountains" viewBox="0 0 800 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,160 0,90 120,40 220,110 340,20 460,100 600,50 800,120 800,160" fill="#2E0812" opacity="0.9"/>
+      <polygon points="0,160 0,120 150,70 300,130 480,60 650,130 800,90 800,160" fill="#47101C"/>
+    </svg>
+    <div class="banner-inner">
+      <div class="logo-badge">NSS</div>
+      <p class="eyebrow">Nepalese Society Singapore</p>
+      <h1>Nepal Flood Relief</h1>
+      <p class="subhead">Community donation tracker</p>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="total-card">
+      <div class="total-label">Total Donation Collected</div>
+      <div class="total">$5,140.00</div>
+      <a class="live-link" href="https://script.google.com/macros/s/AKfycbwS4aynDq8Xg9s8kqyN2Xkk9ymwykmip6dYM3HJzv0rRsn8wqwiZhH9MRPuAE69WMJi/exec" target="_blank" rel="noopener">View Live Tracker →</a>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead><tr><th class="sn">SN</th><th>Name</th><th class="amt">Amount</th></tr></thead>
+        <tbody>
+          <tr><td class="sn">1</td><td>Amrit KC</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">2</td><td>Anita Kharel</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">3</td><td>Anjeeb Lama</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">4</td><td>Bharat Sapkota</td><td class="amt">$200.00</td></tr>
+          <tr><td class="sn">5</td><td>Bishnu Kharel</td><td class="amt">$150.00</td></tr>
+          <tr><td class="sn">6</td><td>Bishnu Pantha</td><td class="amt">$111.00</td></tr>
+          <tr><td class="sn">7</td><td>Chhand Sharma</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">8</td><td>Chobey Raj Kiran</td><td class="amt">$50.00</td></tr>
+          <tr><td class="sn">9</td><td>Deepak Kumar Singh</td><td class="amt">$150.00</td></tr>
+          <tr><td class="sn">10</td><td>Dilaram Sharma</td><td class="amt">$111.00</td></tr>
+          <tr><td class="sn">11</td><td>Divya Aryal</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">12</td><td>Gaytri Meriange &amp; Niranjan Thapa Magar</td><td class="amt">$120.00</td></tr>
+          <tr><td class="sn">13</td><td>Ghana Shyam Aryal</td><td class="amt">$200.00</td></tr>
+          <tr><td class="sn">14</td><td>Indra Khatri</td><td class="amt">$151.00</td></tr>
+          <tr><td class="sn">15</td><td>Keepa Shrestha</td><td class="amt">$105.00</td></tr>
+          <tr><td class="sn">16</td><td>Khima Kharel</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">17</td><td>Kopila Kharal</td><td class="amt">$111.00</td></tr>
+          <tr><td class="sn">18</td><td>Manohar Sharma Upad</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">19</td><td>Narbada Kafle</td><td class="amt">$150.00</td></tr>
+          <tr><td class="sn">20</td><td>Nepal Clothing</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">21</td><td>Pajenado Harlyn Aur</td><td class="amt">$10.00</td></tr>
+          <tr><td class="sn">22</td><td>Raj (Anita Friend)</td><td class="amt">$50.00</td></tr>
+          <tr><td class="sn">23</td><td>Raju Sharma</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">24</td><td>Ram Prasad Bhattarai</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">25</td><td>Ranjana Acharya</td><td class="amt">$500.00</td></tr>
+          <tr><td class="sn">26</td><td>Ravi Kafle</td><td class="amt">$50.00</td></tr>
+          <tr><td class="sn">27</td><td>Riddhi Bahadur Karmacharya</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">28</td><td>Roman Biswakarma</td><td class="amt">$110.00</td></tr>
+          <tr><td class="sn">29</td><td>Sabina Kharel</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">30</td><td>Sagar Kharel</td><td class="amt">$110.00</td></tr>
+          <tr><td class="sn">31</td><td>Samia Ahad</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">32</td><td>Samrat Kumar Singh</td><td class="amt">$50.00</td></tr>
+          <tr><td class="sn">33</td><td>Shisthi Bhattarai</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">34</td><td>Shrijana Sharma</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">35</td><td>Suman Kharel</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">36</td><td>Sunny Singh</td><td class="amt">$50.00</td></tr>
+          <tr><td class="sn">37</td><td>Surakshya Roka</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">38</td><td>Suzie Chua Yan Hsia</td><td class="amt">$100.00</td></tr>
+          <tr><td class="sn">39</td><td>Tapasya Regmi</td><td class="amt">$701.00</td></tr>
+          <tr><td class="sn">40</td><td>Teo Seok Huay</td><td class="amt">$100.00</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <strong>Last updated:</strong> 30 Aug 2026, 3:40 PM SGT<br>
+      If you just donated and don't see your name yet, please check back shortly — this list updates as funds are confirmed in the bank.
+    </div>
+  </div>
+
+  <svg class="flags" viewBox="0 0 400 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="24" fill="url(#flags)"/>
+  </svg>
+
+</body>
+</html>
