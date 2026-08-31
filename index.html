@@ -167,7 +167,6 @@
     </div>
 
     <div class="footer">
-      <strong>Last updated:</strong> <span id="last-updated">loading&hellip;</span><br>
       If you just donated and don't see your name yet, please check back shortly — this list updates as funds are confirmed in the bank.
     </div>
   </div>
@@ -186,7 +185,6 @@
       .then(function (r) { return r.json(); })
       .then(function (data) {
         document.getElementById('total-amount').textContent = '$' + Number(data.total).toFixed(2);
-        document.getElementById('last-updated').textContent = data.updatedAt;
         document.getElementById('donation-rows').innerHTML = data.rows.map(function (r, i) {
           return '<tr><td class="sn">' + (i + 1) + '</td><td>' + esc(r.name) + '</td><td class="amt">$' + Number(r.amount).toFixed(2) + '</td></tr>';
         }).join('');
