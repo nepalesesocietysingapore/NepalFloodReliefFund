@@ -90,7 +90,7 @@
     </div>
 
     <div class="receipt-card">
-      <img src="tranche1-receipt.png" alt="Bank transfer confirmation for Tranche 1">
+      <img id="receipt-img" src="tranche1-receipt.png" alt="Bank transfer confirmation for Tranche 1">
       <div class="receipt-caption">Bank transfer confirmation</div>
     </div>
 
@@ -123,6 +123,9 @@
 
   <script>
   (function () {
+    var receiptBase = 'tranche1-receipt.png';
+    var sep = receiptBase.indexOf('?') === -1 ? '?' : '&';
+    document.getElementById('receipt-img').src = receiptBase + sep + 't=' + Date.now();
     var API_URL = 'https://script.google.com/macros/s/AKfycbwS4aynDq8Xg9s8kqyN2Xkk9ymwykmip6dYM3HJzv0rRsn8wqwiZhH9MRPuAE69WMJi/exec?page=tranche1';
     function esc(s) {
       return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
