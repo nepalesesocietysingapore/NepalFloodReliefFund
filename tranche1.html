@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nepal Flood Relief — Tranche 1 (Transferred)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --crimson:#7A1B2E;
+    --crimson-dark:#5C0F20;
+    --indigo:#47101C;
+    --indigo-deep:#2E0812;
+    --gold:#D9A441;
+    --cream:#F6EEE1;
+    --card:#FFFBF3;
+    --ink:#3A2A28;
+    --ink-soft:#8f7f76;
+  }
+  *{box-sizing:border-box;}
+  body{ margin:0; background:var(--cream); color:var(--ink); font-family:'IBM Plex Sans', sans-serif; -webkit-font-smoothing:antialiased; }
+  .flags{width:100%; height:22px; display:block;}
+  .banner{ position:relative; overflow:hidden; background:linear-gradient(180deg, var(--crimson-dark) 0%, var(--indigo) 65%, var(--indigo-deep) 100%); padding:44px 24px 90px; text-align:center; }
+  .banner .mountains{position:absolute; left:0; right:0; bottom:0; width:100%; height:110px; display:block;}
+  .banner-inner{position:relative; z-index:2;}
+  .logo-badge{ width:64px; height:64px; margin:0 auto 14px; border-radius:50%; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.35); display:flex; align-items:center; justify-content:center; font-family:'Fraunces', serif; font-weight:600; color:#fff; font-size:1.4rem; }
+  .eyebrow{ margin:0 0 6px; letter-spacing:.14em; text-transform:uppercase; font-size:.72rem; color:var(--gold); font-weight:600; }
+  h1{ margin:0; font-family:'Fraunces', serif; font-weight:600; font-size:clamp(1.6rem, 4.5vw, 2.3rem); color:#fff; line-height:1.15; }
+  .subhead{ margin:10px 0 0; color:rgba(255,255,255,.75); font-size:.95rem; }
+  .nav-link{ display:inline-block; margin-top:16px; color:var(--gold); text-decoration:none; font-size:.8rem; font-weight:600; border:1px solid rgba(217,164,65,.55); padding:7px 16px; border-radius:999px; }
+  .wrap{max-width:720px; margin:0 auto; padding:0 20px 40px;}
+  .total-card{ background:var(--card); border-radius:16px; margin-top:-56px; position:relative; z-index:3; padding:28px 24px 24px; text-align:center; box-shadow:0 14px 34px rgba(22,34,61,.18); border-top:3px solid var(--gold); }
+  .total-label{ text-transform:uppercase; letter-spacing:.12em; font-size:.72rem; color:var(--ink-soft); font-weight:600; }
+  .total{ font-family:'Fraunces', serif; font-weight:600; font-size:clamp(2.4rem, 8vw, 3.4rem); color:var(--crimson); margin:6px 0 0; }
+  .receipt-card{ background:var(--card); border-radius:16px; margin-top:20px; padding:20px; box-shadow:0 6px 20px rgba(22,34,61,.08); }
+  .receipt-card img{ width:100%; display:block; border-radius:10px; }
+  .receipt-caption{ text-align:center; color:var(--ink-soft); font-size:.8rem; margin-top:12px; }
+  .details-card{ background:var(--card); border-radius:16px; margin-top:16px; padding:20px 24px; box-shadow:0 6px 20px rgba(22,34,61,.08); }
+  .details-card dl{ margin:0; display:grid; grid-template-columns:1fr 1fr; gap:14px 20px; }
+  .details-card dt{ font-size:.68rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); }
+  .details-card dd{ margin:3px 0 0; font-weight:600; color:var(--ink); font-size:.92rem; }
+  .table-card{ background:var(--card); border-radius:16px; margin-top:20px; overflow:hidden; box-shadow:0 6px 20px rgba(22,34,61,.08); }
+  table{width:100%; border-collapse:collapse;}
+  thead th{ background:var(--indigo); color:#fff; text-align:left; padding:12px 14px; font-size:.75rem; letter-spacing:.06em; text-transform:uppercase; font-weight:600; }
+  th.sn, td.sn{width:44px; text-align:center; color:var(--ink-soft); font-weight:400;}
+  th.amt, td.amt{text-align:right; font-variant-numeric:tabular-nums;}
+  tbody td{padding:10px 14px; border-bottom:1px solid #ece6d8; font-size:.94rem;}
+  tbody tr:nth-child(even){background:#faf7ef;}
+  tbody tr:last-child td{border-bottom:none;}
+  td.amt{font-weight:600; color:var(--crimson-dark);}
+  .footer{text-align:center; margin-top:26px; color:var(--ink-soft); font-size:.82rem; line-height:1.6; padding-bottom:6px;}
+  .footer strong{color:var(--ink);}
+</style>
+</head>
+<body>
+
+  <svg class="flags" viewBox="0 0 400 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <pattern id="flags" width="40" height="24" patternUnits="userSpaceOnUse">
+        <polygon points="0,0 8,0 4,16" fill="#2C5FA8"/>
+        <polygon points="8,0 16,0 12,16" fill="#F7F4EC"/>
+        <polygon points="16,0 24,0 20,16" fill="#A8193C"/>
+        <polygon points="24,0 32,0 28,16" fill="#2F7D4F"/>
+        <polygon points="32,0 40,0 36,16" fill="#E3A83B"/>
+      </pattern>
+    </defs>
+    <rect width="400" height="24" fill="url(#flags)"/>
+  </svg>
+
+  <header class="banner">
+    <svg class="mountains" viewBox="0 0 800 160" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="0,160 0,90 120,40 220,110 340,20 460,100 600,50 800,120 800,160" fill="#2E0812" opacity="0.9"/>
+      <polygon points="0,160 0,120 150,70 300,130 480,60 650,130 800,90 800,160" fill="#47101C"/>
+    </svg>
+    <div class="banner-inner">
+      <div class="logo-badge">NSS</div>
+      <p class="eyebrow">Nepalese Society Singapore</p>
+      <h1>Nepal Flood Relief</h1>
+      <p class="subhead">Tranche 1 — Transferred to Nepal</p>
+      <a class="nav-link" href="index.html">← Back to ongoing tally</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="total-card">
+      <div class="total-label">Total Transferred — Tranche 1</div>
+      <div class="total" id="total-amount">&middot;&middot;&middot;</div>
+    </div>
+
+    <div class="receipt-card">
+      <img src="tranche1-receipt.png" alt="Bank transfer confirmation for Tranche 1">
+      <div class="receipt-caption">Bank transfer confirmation</div>
+    </div>
+
+    <div class="details-card">
+      <dl>
+        <div><dt>Value Date</dt><dd>2 Sep 2026</dd></div>
+        <div><dt>Amount Transferred</dt><dd>14,489.00 SGD</dd></div>
+        <div><dt>Beneficiary</dt><dd>Prime Minister Disaster Relief Fund, Nabil Bank, Kathmandu</dd></div>
+        <div><dt>Reference No.</dt><dd>NEPAL FLOOD RELI</dd></div>
+      </dl>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead><tr><th class="sn">SN</th><th>Name</th><th class="amt">Amount</th></tr></thead>
+        <tbody id="donation-rows">
+          <tr><td colspan="3" style="text-align:center; padding:24px; color:var(--ink-soft);">Loading donor list&hellip;</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer">
+      <strong>Tranche 1 is complete</strong> and covers donations recorded up to row 111 in the sheet. Newer donations appear on the ongoing tally.
+    </div>
+  </div>
+
+  <svg class="flags" viewBox="0 0 400 24" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="24" fill="url(#flags)"/>
+  </svg>
+
+  <script>
+  (function () {
+    var API_URL = 'https://script.google.com/macros/s/AKfycbwS4aynDq8Xg9s8kqyN2Xkk9ymwykmip6dYM3HJzv0rRsn8wqwiZhH9MRPuAE69WMJi/exec?page=tranche1';
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+    fetch(API_URL)
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        document.getElementById('total-amount').textContent = '$' + Number(data.total).toFixed(2);
+        document.getElementById('donation-rows').innerHTML = data.rows.map(function (r, i) {
+          return '<tr><td class="sn">' + (i + 1) + '</td><td>' + esc(r.name) + '</td><td class="amt">$' + Number(r.amount).toFixed(2) + '</td></tr>';
+        }).join('');
+      })
+      .catch(function (err) {
+        console.error('Live refresh failed.', err);
+      });
+  })();
+  </script>
+
+</body>
+</html>
