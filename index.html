@@ -51,8 +51,10 @@
   tbody tr:nth-child(even){background:#faf7ef;}
   tbody tr:last-child td{border-bottom:none;}
   td.amt{font-weight:600; color:var(--crimson-dark);}
-  a.donor-link{ color:var(--crimson-dark); text-decoration:none; border-bottom:1px dashed var(--crimson-dark); }
-  a.donor-link:hover{ color:var(--crimson); border-bottom-style:solid; }
+  th.receipt, td.receipt{width:56px; text-align:center;}
+  .receipt-btn{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; color:var(--crimson-dark); background:rgba(122,27,46,.08); text-decoration:none; }
+  .receipt-btn:hover{ background:rgba(122,27,46,.16); color:var(--crimson); }
+  .receipt-none{ color:var(--ink-soft); }
   .footer{text-align:center; margin-top:26px; color:var(--ink-soft); font-size:.82rem; line-height:1.6; padding-bottom:6px;}
   .footer strong{color:var(--ink);}
 </style>
@@ -98,30 +100,30 @@
 
     <div class="table-card">
       <table>
-        <thead><tr><th class="sn">SN</th><th>Name</th><th class="amt">Amount</th></tr></thead>
+        <thead><tr><th class="sn">SN</th><th>Name</th><th class="amt">Amount</th><th class="receipt">Receipt</th></tr></thead>
         <tbody id="donation-rows">
-          <tr><td class="sn">1</td><td>Binit Agrawal</td><td class="amt">$151.00</td></tr>
-          <tr><td class="sn">2</td><td>Burmese Gurkha Society Singapore (BGSS)</td><td class="amt">$600.00</td></tr>
-          <tr><td class="sn">3</td><td>Chatterjee Chandrim</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">4</td><td>Esther Wong</td><td class="amt">$200.00</td></tr>
-          <tr><td class="sn">5</td><td>Ghosh Bahni</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">6</td><td>Hsu Yee</td><td class="amt">$300.00</td></tr>
-          <tr><td class="sn">7</td><td>Ivy Vong Tet Chin</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">8</td><td>Julie Choo</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">9</td><td>Michelle Chin Foong</td><td class="amt">$300.00</td></tr>
-          <tr><td class="sn">10</td><td>Mok Chuan Sheng</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">11</td><td>Mr Patel</td><td class="amt">$251.00</td></tr>
-          <tr><td class="sn">12</td><td>Ng Ailin Selena</td><td class="amt">$500.00</td></tr>
-          <tr><td class="sn">13</td><td>Roopali Banerjee</td><td class="amt">$50.50</td></tr>
-          <tr><td class="sn">14</td><td>S2 Computer Supplies Pte Ltd (Ms Sharon Chua)</td><td class="amt">$500.00</td></tr>
-          <tr><td class="sn">15</td><td>Teo Pek Ling</td><td class="amt">$200.00</td></tr>
+          <tr><td class="sn">1</td><td>Binit Agrawal</td><td class="amt">$151.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">2</td><td>Burmese Gurkha Society Singapore (BGSS)</td><td class="amt">$600.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">3</td><td>Chatterjee Chandrim</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">4</td><td>Esther Wong</td><td class="amt">$200.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">5</td><td>Ghosh Bahni</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">6</td><td>Hsu Yee</td><td class="amt">$300.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">7</td><td>Ivy Vong Tet Chin</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">8</td><td>Julie Choo</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">9</td><td>Michelle Chin Foong</td><td class="amt">$300.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">10</td><td>Mok Chuan Sheng</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">11</td><td>Mr Patel</td><td class="amt">$251.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">12</td><td>Ng Ailin Selena</td><td class="amt">$500.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">13</td><td>Roopali Banerjee</td><td class="amt">$50.50</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">14</td><td>S2 Computer Supplies Pte Ltd (Ms Sharon Chua)</td><td class="amt">$500.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">15</td><td>Teo Pek Ling</td><td class="amt">$200.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="footer">
       This is the <strong>ongoing tranche</strong> — donations received after Tranche 1 was transferred to the PMO Disaster Relief Fund on 2 Sep 2026. If you just donated and don't see your name yet, please check back shortly — this list updates as funds are confirmed in the bank.<br>
-      Names that are underlined link to a downloadable PDF receipt — click yours to view or save it.
+      Click the download icon next to your name to get your PDF receipt.
     </div>
   </div>
 
@@ -132,10 +134,12 @@
   <script>
   (function () {
     var API_URL = 'https://script.google.com/macros/s/AKfycbwS4aynDq8Xg9s8kqyN2Xkk9ymwykmip6dYM3HJzv0rRsn8wqwiZhH9MRPuAE69WMJi/exec';
+    var downloadIcon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1.5v8.4M8 9.9 4.8 6.7M8 9.9l3.2-3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 11.5v1.6c0 .6.4 1 1 1h9c.6 0 1-.4 1-1v-1.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-    function nameCell(r) {
-      var n = esc(r.name);
-      return r.receiptUrl ? '<a class="donor-link" href="' + r.receiptUrl + '" target="_blank" rel="noopener">' + n + '</a>' : n;
+    function receiptCell(r) {
+      return r.receiptUrl
+        ? '<a class="receipt-btn" href="' + r.receiptUrl + '" target="_blank" rel="noopener" title="Download receipt" aria-label="Download receipt for ' + esc(r.name) + '">' + downloadIcon + '</a>'
+        : '<span class="receipt-none" aria-hidden="true">&ndash;</span>';
     }
     fetch(API_URL)
       .then(function (r) { return r.json(); })
@@ -143,8 +147,8 @@
         document.getElementById('total-amount').textContent = '
 </html> + Number(data.total).toFixed(2);
         document.getElementById('donation-rows').innerHTML = data.rows.map(function (r, i) {
-          return '<tr><td class="sn">' + (i + 1) + '</td><td>' + nameCell(r) + '</td><td class="amt">
-</html> + Number(r.amount).toFixed(2) + '</td></tr>';
+          return '<tr><td class="sn">' + (i + 1) + '</td><td>' + esc(r.name) + '</td><td class="amt">
+</html> + Number(r.amount).toFixed(2) + '</td><td class="receipt">' + receiptCell(r) + '</td></tr>';
         }).join('');
       })
       .catch(function (err) {
