@@ -51,8 +51,10 @@
   tbody tr:nth-child(even){background:#faf7ef;}
   tbody tr:last-child td{border-bottom:none;}
   td.amt{font-weight:600; color:var(--crimson-dark);}
-  a.donor-link{ color:var(--crimson-dark); text-decoration:none; border-bottom:1px dashed var(--crimson-dark); }
-  a.donor-link:hover{ color:var(--crimson); border-bottom-style:solid; }
+  th.receipt, td.receipt{width:56px; text-align:center;}
+  .receipt-btn{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:8px; color:var(--crimson-dark); background:rgba(122,27,46,.08); text-decoration:none; }
+  .receipt-btn:hover{ background:rgba(122,27,46,.16); color:var(--crimson); }
+  .receipt-none{ color:var(--ink-soft); }
   .footer{text-align:center; margin-top:26px; color:var(--ink-soft); font-size:.82rem; line-height:1.6; padding-bottom:6px;}
   .footer strong{color:var(--ink);}
 </style>
@@ -117,120 +119,120 @@
 
     <div class="table-card">
       <table>
-        <thead><tr><th class="sn">SN</th><th>Name</th><th class="amt">Amount</th></tr></thead>
+        <thead><tr><th class="sn">SN</th><th>Name</th><th class="amt">Amount</th><th class="receipt">Receipt</th></tr></thead>
         <tbody id="donation-rows">
-          <tr><td class="sn">1</td><td>Ale Lal Bahadur</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">2</td><td>Ameer Rohan Bin</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">3</td><td>Amrit KC</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">4</td><td>Anita Kharel</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">5</td><td>Anjeeb Lama</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">6</td><td>Batsal Kumar Nemkul</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">7</td><td>Bharat Sapkota</td><td class="amt">$200.00</td></tr>
-          <tr><td class="sn">8</td><td>Bhawana Sapkota</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">9</td><td>Bhim B Gurung</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">10</td><td>Bhim Bahadur Gurung</td><td class="amt">$900.00</td></tr>
-          <tr><td class="sn">11</td><td>Bhuban Bhandari</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">12</td><td>Bishnu Kharal</td><td class="amt">$150.00</td></tr>
-          <tr><td class="sn">13</td><td>Bishnu Pantha</td><td class="amt">$111.00</td></tr>
-          <tr><td class="sn">14</td><td>Blue Fury Womens Futsal Winner- Cash Prize (Hema / Shristi / Bhawana / Doris / Garima / Swastika / Tapasya )</td><td class="amt">$222.00</td></tr>
-          <tr><td class="sn">15</td><td>Burmese Gurkha Society Singapore (BGSS)</td><td class="amt">$1000.00</td></tr>
-          <tr><td class="sn">16</td><td>Chai Teck Seon</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">17</td><td>Chan Yoke Ying</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">18</td><td>Chhand Sharma</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">19</td><td>Chia Phuy Kwe</td><td class="amt">$20.00</td></tr>
-          <tr><td class="sn">20</td><td>Chloe Victoria Tee</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">21</td><td>Chobey Raj Kiran</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">22</td><td>Chung Wai Ching</td><td class="amt">$40.00</td></tr>
-          <tr><td class="sn">23</td><td>Deepak Kumar Singh</td><td class="amt">$150.00</td></tr>
-          <tr><td class="sn">24</td><td>Dil Bahadur Gurung</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">25</td><td>Dilaram Sharma</td><td class="amt">$111.00</td></tr>
-          <tr><td class="sn">26</td><td>Divya Aryal</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">27</td><td>Eileen Soh</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">28</td><td>Gan Siew Mui Grace</td><td class="amt">$155.00</td></tr>
-          <tr><td class="sn">29</td><td>Gaytri Meriange &amp; Niranjan Thapa Magar</td><td class="amt">$120.00</td></tr>
-          <tr><td class="sn">30</td><td>Ghana Shyam Aryal</td><td class="amt">$200.00</td></tr>
-          <tr><td class="sn">31</td><td>Goh Heng Jiah @ Yeo</td><td class="amt">$10.00</td></tr>
-          <tr><td class="sn">32</td><td>Gulam Mansoor Alam</td><td class="amt">$20.00</td></tr>
-          <tr><td class="sn">33</td><td>Ho Kok Wah</td><td class="amt">$150.00</td></tr>
-          <tr><td class="sn">34</td><td>Hyder Bin Nor Azhar</td><td class="amt">$10.00</td></tr>
-          <tr><td class="sn">35</td><td>Ian Alexander Law</td><td class="amt">$150.00</td></tr>
-          <tr><td class="sn">36</td><td>Indra Bahadur Gurung</td><td class="amt">$108.00</td></tr>
-          <tr><td class="sn">37</td><td>Indra Khatri</td><td class="amt">$151.00</td></tr>
-          <tr><td class="sn">38</td><td>Jessica Lin Thapa</td><td class="amt">$101.00</td></tr>
-          <tr><td class="sn">39</td><td>Keepa Shrestha</td><td class="amt">$105.00</td></tr>
-          <tr><td class="sn">40</td><td>Khima Kharel</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">41</td><td>Kopila Kharel</td><td class="amt">$111.00</td></tr>
-          <tr><td class="sn">42</td><td>Kopila Rana</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">43</td><td>Krishna Gopal Dongol</td><td class="amt">$200.00</td></tr>
-          <tr><td class="sn">44</td><td>Kua Moi Chin</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">45</td><td>Lal Mani Kharel</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">46</td><td>Lee Chin Min</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">47</td><td>Leena Chitrakar</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">48</td><td>Low Yufeng</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">49</td><td>Mandala Reyna</td><td class="amt">$20.00</td></tr>
-          <tr><td class="sn">50</td><td>Manohar Sharma</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">51</td><td>Manoj Tamang</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">52</td><td>Meson Maharjan</td><td class="amt">$60.00</td></tr>
-          <tr><td class="sn">53</td><td>Mousam KC</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">54</td><td>Muni Raj Dangol</td><td class="amt">$105.00</td></tr>
-          <tr><td class="sn">55</td><td>Mylen Aala Lara</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">56</td><td>Narbada Kafle</td><td class="amt">$150.00</td></tr>
-          <tr><td class="sn">57</td><td>Neo Juan Ying</td><td class="amt">$10.00</td></tr>
-          <tr><td class="sn">58</td><td>Nepal Clothing</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">59</td><td>Pajenado Harlyn</td><td class="amt">$10.00</td></tr>
-          <tr><td class="sn">60</td><td>Piyus Narayan</td><td class="amt">$300.00</td></tr>
-          <tr><td class="sn">61</td><td>Prabhakhar Parajuli &amp; Family</td><td class="amt">$315.00</td></tr>
-          <tr><td class="sn">62</td><td>Prof Prabhakaran</td><td class="amt">$500.00</td></tr>
-          <tr><td class="sn">63</td><td>Rabin Basnyat and Family</td><td class="amt">$501.00</td></tr>
-          <tr><td class="sn">64</td><td>Raj Kiran Chaubey</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">65</td><td>Rajani Shrestha Chitrakar</td><td class="amt">$500.00</td></tr>
-          <tr><td class="sn">66</td><td>Rajendra Agrawal</td><td class="amt">$151.00</td></tr>
-          <tr><td class="sn">67</td><td>Raju Sharma</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">68</td><td>Ram Bahadur Shahi</td><td class="amt">$110.00</td></tr>
-          <tr><td class="sn">69</td><td>Ram Prasad Bhattarai</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">70</td><td>Ranjana Acharya</td><td class="amt">$500.00</td></tr>
-          <tr><td class="sn">71</td><td>Ranjeet KC</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">72</td><td>Ravi Kafle</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">73</td><td>Riddhi Bahadur Karmacharya</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">74</td><td>Rob BK's Colleague</td><td class="amt">$70.00</td></tr>
-          <tr><td class="sn">75</td><td>Robert Bishowkarma</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">76</td><td>Roman Biswakarma</td><td class="amt">$110.00</td></tr>
-          <tr><td class="sn">77</td><td>Sabina Kharal</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">78</td><td>Sagar Kharal</td><td class="amt">$110.00</td></tr>
-          <tr><td class="sn">79</td><td>Sally Chee</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">80</td><td>Samia Ahad</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">81</td><td>Samrat Kumar Singh</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">82</td><td>Sanchit Chokhani</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">83</td><td>Sandeep Shrestha</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">84</td><td>Saws Tshering Sherpa</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">85</td><td>Sebastian Chen</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">86</td><td>Sebastian Chen</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">87</td><td>Serene ST</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">88</td><td>Shailesh Bikram Thapa</td><td class="amt">$101.00</td></tr>
-          <tr><td class="sn">89</td><td>Shisthi Bhattarai</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">90</td><td>Shreya Sreekum</td><td class="amt">$5.00</td></tr>
-          <tr><td class="sn">91</td><td>Shrijana Sharma</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">92</td><td>Siaw Hua Koon</td><td class="amt">$5.00</td></tr>
-          <tr><td class="sn">93</td><td>Soon Shu Fen Audrey</td><td class="amt">$200.00</td></tr>
-          <tr><td class="sn">94</td><td>Sudeshna Dhar</td><td class="amt">$60.00</td></tr>
-          <tr><td class="sn">95</td><td>Suman Kharal</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">96</td><td>Sunny Singh</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">97</td><td>Surakshya Roka</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">98</td><td>Suzie Chua Yan Hsia</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">99</td><td>Tan Wee Szu</td><td class="amt">$30.00</td></tr>
-          <tr><td class="sn">100</td><td>Tapasya Regmi</td><td class="amt">$701.00</td></tr>
-          <tr><td class="sn">101</td><td>Tej Kumar Limbu</td><td class="amt">$200.00</td></tr>
-          <tr><td class="sn">102</td><td>Teo Seok Huay</td><td class="amt">$100.00</td></tr>
-          <tr><td class="sn">103</td><td>Tok Yu Chye</td><td class="amt">$20.00</td></tr>
-          <tr><td class="sn">104</td><td>Wang Hui Ting</td><td class="amt">$50.00</td></tr>
-          <tr><td class="sn">105</td><td>Ying Wai Lin</td><td class="amt">$500.00</td></tr>
+          <tr><td class="sn">1</td><td>Ale Lal Bahadur</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">2</td><td>Ameer Rohan Bin</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">3</td><td>Amrit KC</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">4</td><td>Anita Kharel</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">5</td><td>Anjeeb Lama</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">6</td><td>Batsal Kumar Nemkul</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">7</td><td>Bharat Sapkota</td><td class="amt">$200.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">8</td><td>Bhawana Sapkota</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">9</td><td>Bhim B Gurung</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">10</td><td>Bhim Bahadur Gurung</td><td class="amt">$900.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">11</td><td>Bhuban Bhandari</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">12</td><td>Bishnu Kharal</td><td class="amt">$150.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">13</td><td>Bishnu Pantha</td><td class="amt">$111.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">14</td><td>Blue Fury Womens Futsal Winner- Cash Prize (Hema / Shristi / Bhawana / Doris / Garima / Swastika / Tapasya )</td><td class="amt">$222.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">15</td><td>Burmese Gurkha Society Singapore (BGSS)</td><td class="amt">$1000.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">16</td><td>Chai Teck Seon</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">17</td><td>Chan Yoke Ying</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">18</td><td>Chhand Sharma</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">19</td><td>Chia Phuy Kwe</td><td class="amt">$20.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">20</td><td>Chloe Victoria Tee</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">21</td><td>Chobey Raj Kiran</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">22</td><td>Chung Wai Ching</td><td class="amt">$40.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">23</td><td>Deepak Kumar Singh</td><td class="amt">$150.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">24</td><td>Dil Bahadur Gurung</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">25</td><td>Dilaram Sharma</td><td class="amt">$111.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">26</td><td>Divya Aryal</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">27</td><td>Eileen Soh</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">28</td><td>Gan Siew Mui Grace</td><td class="amt">$155.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">29</td><td>Gaytri Meriange &amp; Niranjan Thapa Magar</td><td class="amt">$120.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">30</td><td>Ghana Shyam Aryal</td><td class="amt">$200.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">31</td><td>Goh Heng Jiah @ Yeo</td><td class="amt">$10.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">32</td><td>Gulam Mansoor Alam</td><td class="amt">$20.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">33</td><td>Ho Kok Wah</td><td class="amt">$150.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">34</td><td>Hyder Bin Nor Azhar</td><td class="amt">$10.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">35</td><td>Ian Alexander Law</td><td class="amt">$150.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">36</td><td>Indra Bahadur Gurung</td><td class="amt">$108.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">37</td><td>Indra Khatri</td><td class="amt">$151.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">38</td><td>Jessica Lin Thapa</td><td class="amt">$101.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">39</td><td>Keepa Shrestha</td><td class="amt">$105.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">40</td><td>Khima Kharel</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">41</td><td>Kopila Kharel</td><td class="amt">$111.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">42</td><td>Kopila Rana</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">43</td><td>Krishna Gopal Dongol</td><td class="amt">$200.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">44</td><td>Kua Moi Chin</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">45</td><td>Lal Mani Kharel</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">46</td><td>Lee Chin Min</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">47</td><td>Leena Chitrakar</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">48</td><td>Low Yufeng</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">49</td><td>Mandala Reyna</td><td class="amt">$20.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">50</td><td>Manohar Sharma</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">51</td><td>Manoj Tamang</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">52</td><td>Meson Maharjan</td><td class="amt">$60.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">53</td><td>Mousam KC</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">54</td><td>Muni Raj Dangol</td><td class="amt">$105.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">55</td><td>Mylen Aala Lara</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">56</td><td>Narbada Kafle</td><td class="amt">$150.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">57</td><td>Neo Juan Ying</td><td class="amt">$10.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">58</td><td>Nepal Clothing</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">59</td><td>Pajenado Harlyn</td><td class="amt">$10.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">60</td><td>Piyus Narayan</td><td class="amt">$300.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">61</td><td>Prabhakhar Parajuli &amp; Family</td><td class="amt">$315.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">62</td><td>Prof Prabhakaran</td><td class="amt">$500.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">63</td><td>Rabin Basnyat and Family</td><td class="amt">$501.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">64</td><td>Raj Kiran Chaubey</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">65</td><td>Rajani Shrestha Chitrakar</td><td class="amt">$500.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">66</td><td>Rajendra Agrawal</td><td class="amt">$151.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">67</td><td>Raju Sharma</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">68</td><td>Ram Bahadur Shahi</td><td class="amt">$110.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">69</td><td>Ram Prasad Bhattarai</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">70</td><td>Ranjana Acharya</td><td class="amt">$500.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">71</td><td>Ranjeet KC</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">72</td><td>Ravi Kafle</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">73</td><td>Riddhi Bahadur Karmacharya</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">74</td><td>Rob BK's Colleague</td><td class="amt">$70.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">75</td><td>Robert Bishowkarma</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">76</td><td>Roman Biswakarma</td><td class="amt">$110.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">77</td><td>Sabina Kharal</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">78</td><td>Sagar Kharal</td><td class="amt">$110.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">79</td><td>Sally Chee</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">80</td><td>Samia Ahad</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">81</td><td>Samrat Kumar Singh</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">82</td><td>Sanchit Chokhani</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">83</td><td>Sandeep Shrestha</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">84</td><td>Saws Tshering Sherpa</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">85</td><td>Sebastian Chen</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">86</td><td>Sebastian Chen</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">87</td><td>Serene ST</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">88</td><td>Shailesh Bikram Thapa</td><td class="amt">$101.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">89</td><td>Shisthi Bhattarai</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">90</td><td>Shreya Sreekum</td><td class="amt">$5.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">91</td><td>Shrijana Sharma</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">92</td><td>Siaw Hua Koon</td><td class="amt">$5.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">93</td><td>Soon Shu Fen Audrey</td><td class="amt">$200.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">94</td><td>Sudeshna Dhar</td><td class="amt">$60.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">95</td><td>Suman Kharal</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">96</td><td>Sunny Singh</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">97</td><td>Surakshya Roka</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">98</td><td>Suzie Chua Yan Hsia</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">99</td><td>Tan Wee Szu</td><td class="amt">$30.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">100</td><td>Tapasya Regmi</td><td class="amt">$701.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">101</td><td>Tej Kumar Limbu</td><td class="amt">$200.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">102</td><td>Teo Seok Huay</td><td class="amt">$100.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">103</td><td>Tok Yu Chye</td><td class="amt">$20.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">104</td><td>Wang Hui Ting</td><td class="amt">$50.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
+          <tr><td class="sn">105</td><td>Ying Wai Lin</td><td class="amt">$500.00</td><td class="receipt"><span class="receipt-none" aria-hidden="true">&ndash;</span></td></tr>
         </tbody>
       </table>
     </div>
 
     <div class="footer">
       <strong>Tranche 1 is closed.</strong> This list (rows 2&ndash;111 of the donation sheet) was transferred in full to the PMO Disaster Relief Fund on 02 Sep 2026, published here for transparency. New donations now appear on the <a href="index.html">Ongoing Tranche</a> page.<br>
-      Names that are underlined link to a downloadable PDF receipt — click yours to view or save it.
+      Click the download icon next to your name to get your PDF receipt.
     </div>
   </div>
 
@@ -241,17 +243,19 @@
   <script>
   (function () {
     var API_URL = 'https://script.google.com/macros/s/AKfycbwS4aynDq8Xg9s8kqyN2Xkk9ymwykmip6dYM3HJzv0rRsn8wqwiZhH9MRPuAE69WMJi/exec?tranche=1';
+    var downloadIcon = '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1.5v8.4M8 9.9 4.8 6.7M8 9.9l3.2-3.2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M2.5 11.5v1.6c0 .6.4 1 1 1h9c.6 0 1-.4 1-1v-1.6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
     function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
-    function nameCell(r) {
-      var n = esc(r.name);
-      return r.receiptUrl ? '<a class="donor-link" href="' + r.receiptUrl + '" target="_blank" rel="noopener">' + n + '</a>' : n;
+    function receiptCell(r) {
+      return r.receiptUrl
+        ? '<a class="receipt-btn" href="' + r.receiptUrl + '" target="_blank" rel="noopener" title="Download receipt" aria-label="Download receipt for ' + esc(r.name) + '">' + downloadIcon + '</a>'
+        : '<span class="receipt-none" aria-hidden="true">&ndash;</span>';
     }
     fetch(API_URL)
       .then(function (r) { return r.json(); })
       .then(function (data) {
         document.getElementById('donation-rows').innerHTML = data.rows.map(function (r, i) {
-          return '<tr><td class="sn">' + (i + 1) + '</td><td>' + nameCell(r) + '</td><td class="amt">
-</html> + Number(r.amount).toFixed(2) + '</td></tr>';
+          return '<tr><td class="sn">' + (i + 1) + '</td><td>' + esc(r.name) + '</td><td class="amt">
+</html> + Number(r.amount).toFixed(2) + '</td><td class="receipt">' + receiptCell(r) + '</td></tr>';
         }).join('');
       })
       .catch(function (err) {
